@@ -1,6 +1,33 @@
 <resources>
+    <!--Название экранов-->
     <string name="app_name">Учёт комплектующих</string>
     <string name="action_main">Главная</string>
     <string name="action_admin">Администрирование</string>
     <string name="action_qr">Сканировать QR-код</string>
+
+    <!--Подсказки для полей ввода-->
+    <string name="edt_id">id</string>
+    <string name="edt_name">Наименование</string>
+    <string name="edt_type">Тип</string>
+    <string name="edt_number">Количество</string>
+    <string name="edt_provider">Поставщик</string>
+    <string name="edt_date">Дата</string>
+
+    <!--Названия кнопок-->
+    <string name="add">Добавить</string>
+    <string name="read">Прочитать</string>
+    <string name="update">Обновить</string>
+    <string name="remove">Удалить</string>
+    <string name="clear">Удалить всё</string>
+    <string name="clear_output">Оч. вывод</string>
+    <string name="all">Все позиции</string>
+    <string name="byType">По типу</string>
+    <string name="byName">По названию</string>
+    <string name="qrScan">Сканировать код</string>
+
+
+    <!--Названия текстовых полей-->
+    <string name="tv_scan_content">Наименование</string>
+    <string name="tv_scan_format">Формат кода</string>
+    <string name="tv_out_data">Выходные данные</string>
 </resources>

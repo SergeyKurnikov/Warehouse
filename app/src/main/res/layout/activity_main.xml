@@ -7,25 +7,100 @@
     android:background="@color/smoky"
     tools:context=".MainActivity">
 
+
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World"
-            android:textColor="@color/solar"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_name"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edtType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_type"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edProvider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_provider"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Поиск/сортировка"
+                android:textAlignment="center"
+                android:textColor="@color/solar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnByGroup"
+                    android:layout_width="141dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/all"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnBySurname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/byType"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnByPhoneOrEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/byName"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDataAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/solar" />
+
+        </LinearLayout>
     </ScrollView>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

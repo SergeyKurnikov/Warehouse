@@ -7,4 +7,169 @@
     android:background="@color/smoky"
     tools:context=".AdminActivity">
 
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <EditText
+                android:id="@+id/edtId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_id"
+                android:inputType="number"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_name"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edtType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_type"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edtNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_number"
+                android:inputType="number"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edProvider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_provider"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <EditText
+                android:id="@+id/edDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/solar"
+                android:ems="10"
+                android:hint="@string/edt_date"
+                android:inputType="date"
+                android:textColor="@color/solar"
+                android:textColorHint="@color/white" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CRUD-операции"
+                android:textAlignment="center"
+                android:textColor="@color/solar" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/add"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnRead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/read"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/clear"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/remove"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/update"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnClearOutput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/clear_output"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDataAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/solar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
