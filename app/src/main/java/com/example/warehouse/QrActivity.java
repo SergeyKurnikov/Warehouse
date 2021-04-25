@@ -3,8 +3,12 @@ package com.example.warehouse;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,21 +20,31 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class QrActivity extends AppCompatActivity implements View.OnClickListener {
+
+    /**Экземпляры класса Button для кнопки сканирования*/
     Button scanBtn;
-    TextView tvScanContent, tvScanFormat;
 
+    /**Экземпляры класса TextView для полей вывода расшифровки кода, формата кода,
+     * текстовых данных из базы
+     */
+    TextView tvScanContent, tvScanFormat, tvAllData2;
 
-
-
+    /**Экземпляры класса DBHelper для взаимодействия с базой данных*/
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
-        scanBtn = findViewById(R.id.btnScan);
+
         tvScanContent = findViewById(R.id.tvScanContent);
         tvScanFormat = findViewById(R.id.tvScanFormat);
+        tvAllData2 = findViewById(R.id.tvDataAll2);
+
+        scanBtn = findViewById(R.id.btnScan);
         scanBtn.setOnClickListener(this);
+        //Инициализация экземплра класса DBHelper
+        dbHelper = new DBHelper(this);
     }
     /**
      * Метод, который берёт данные из ресурсов меню и
@@ -75,6 +89,33 @@ public class QrActivity extends AppCompatActivity implements View.OnClickListene
             } else{
                 tvScanFormat.setText(result.getFormatName());
                 tvScanContent.setText(result.getContents());
+
+                String name = tvScanContent.getText().toString();
+                // Создание экземпляра класса DSQLiteDatabase
+                SQLiteDatabase database = dbHelper.getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+                String allLines = "";
+                Cursor cursor = database.query(DBHelper.TABLE_COMPLETE, new String[] {"_id","name","type", "number", "provider", "date"}, DBHelper.KEY_NAME + " = ?", new String[] {name}, null, null, null);
+                if (cursor.moveToFirst()){
+                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
+                    int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
+                    int typeIndex = cursor.getColumnIndex(DBHelper.KEY_TYPE);
+                    int numberIndex = cursor.getColumnIndex(DBHelper.KEY_NUMBER);
+                    int providerIndex = cursor.getColumnIndex(DBHelper.KEY_PROVIDER);
+                    int dateIndex = cursor.getColumnIndex(DBHelper.KEY_DATE);
+                    // Перебирание и вывод строк таблицы
+                    do {
+                        allLines += cursor.getInt(idIndex) + ") "
+                                + cursor.getString(nameIndex) + " "
+                                + cursor.getString(typeIndex) + " "
+                                + cursor.getString(numberIndex) + "шт. "
+                                + cursor.getString(providerIndex) + " "
+                                + cursor.getString(dateIndex) + "\n";
+                    } while (cursor.moveToNext());
+                    tvAllData2.setText(allLines);
+                }
+                cursor.close();
+                dbHelper.hashCode();
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);

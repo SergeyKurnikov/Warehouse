@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**Экземпляры класса Button для кнопок чтения добавления и удаления*/
     Button btnAll, btnByName, btnByType, btnByProvider;
 
-    /**Экземпляры класса TextView для поля вывода текстовых данных*/
+    /**Экземпляр класса TextView для поля вывода текстовых данных*/
     TextView tvAllData;
 
     /**Экземпляры класса DBHelper для взаимодействия с базой данных*/
