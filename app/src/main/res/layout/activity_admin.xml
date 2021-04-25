@@ -65,7 +65,7 @@
                 android:textColorHint="@color/white" />
 
             <EditText
-                android:id="@+id/edProvider"
+                android:id="@+id/edtProvider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/solar"
@@ -75,7 +75,7 @@
                 android:textColorHint="@color/white" />
 
             <EditText
-                android:id="@+id/edDate"
+                android:id="@+id/edtDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/solar"

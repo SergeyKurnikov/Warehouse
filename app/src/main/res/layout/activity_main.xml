@@ -44,7 +44,7 @@
                 android:textColorHint="@color/white" />
 
             <EditText
-                android:id="@+id/edProvider"
+                android:id="@+id/edtProvider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/solar"
@@ -67,8 +67,8 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnByGroup"
-                    android:layout_width="141dp"
+                    android:id="@+id/btnAll"
+                    android:layout_width="72dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/all"
@@ -76,8 +76,25 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/btnBySurname"
+                    android:id="@+id/btnByName"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/byName"
+                    android:textColor="@color/smoky"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnByType"
+                    android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/byType"
@@ -85,11 +102,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/btnByPhoneOrEmail"
+                    android:id="@+id/btnByProvider"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/byName"
+                    android:text="@string/byProvider"
                     android:textColor="@color/smoky"
                     android:textSize="12sp" />
 

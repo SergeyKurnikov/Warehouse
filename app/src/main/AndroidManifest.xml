@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Warehouse">
         <activity android:name=".QrActivity" android:label="@string/action_qr"></activity>
-        <activity android:name=".AdminActivity" android:label="@string/action_admin" android:noHistory="true"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".AdminActivity" android:label="@string/action_admin" android:noHistory="true" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".MainActivity" android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

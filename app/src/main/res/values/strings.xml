@@ -20,9 +20,10 @@
     <string name="remove">Удалить</string>
     <string name="clear">Удалить всё</string>
     <string name="clear_output">Оч. вывод</string>
-    <string name="all">Все позиции</string>
+    <string name="all">Все</string>
     <string name="byType">По типу</string>
-    <string name="byName">По названию</string>
+    <string name="byName">По наименованию</string>
+    <string name="byProvider">По поставщику</string>
     <string name="qrScan">Сканировать код</string>
 
 
