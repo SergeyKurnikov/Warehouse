@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.example.warehouse.TextUtil.isTextCorrect;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     /**Экземпляры класса EditText для полей имени и емайла*/
     EditText edtId, edtName, edtType, edtProvider;
@@ -122,6 +124,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // Логика кнопки "ПО НАИМЕНОВАНИЮ"
             case R.id.btnByName:
+                if(!isTextCorrect(name)){
+                    tvAllData.setText("Некоректное имя!");
+                    break;
+                }
                 cursor = database.query(DBHelper.TABLE_COMPLETE, new String[] {"_id","name","type", "number", "provider", "date"}, DBHelper.KEY_NAME + " = ?", new String[] {name}, null, null, null);
                 if (cursor.moveToFirst()){
                     int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
@@ -151,6 +157,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // Логика кнопки "ПО ТИПУ"
             case R.id.btnByType:
+                if(!isTextCorrect(type)){
+                    tvAllData.setText("Некоректный тип!");
+                    break;
+                }
                 cursor = database.query(DBHelper.TABLE_COMPLETE, new String[] {"_id","name","type", "number", "provider", "date"}, DBHelper.KEY_TYPE + " = ?", new String[] {type}, null, null, null);
                 if (cursor.moveToFirst()){
                     int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
@@ -180,6 +190,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // Логика кнопки "ПО ПОСТАВЩИКУ"
             case R.id.btnByProvider:
+                if(!isTextCorrect(provider)){
+                    tvAllData.setText("Некоректный поставщик!");
+                    break;
+                }
                 cursor = database.query(DBHelper.TABLE_COMPLETE, new String[] {"_id","name","type", "number", "provider", "date"}, DBHelper.KEY_PROVIDER + " = ?", new String[] {provider}, null, null, null);
                 if (cursor.moveToFirst()){
                     int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);

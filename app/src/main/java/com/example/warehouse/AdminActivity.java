@@ -16,6 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import static com.example.warehouse.NumberUtil.isNumberInputCorrect;
+import static com.example.warehouse.TextUtil.isTextCorrect;
+import static com.example.warehouse.DateUtil.isDateCorrect;
 
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
     /**Экземпляры класса EditText для полей имени и емайла*/
@@ -122,6 +125,34 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                 contentValues.put(DBHelper.KEY_DATE, date);
 
                 Log.d("LOG_TAG", "Метод проверки вернул" + checkUserExists(_id, name));
+                if(!isNumberInputCorrect(_id)){
+                    tvAllData.setText("Идентефикатор не может быть пустым или равняться нулю!");
+                    break;
+                }
+                if(!isTextCorrect(name)){
+                    tvAllData.setText("Некоректное имя!");
+                    break;
+                }
+                if(!isTextCorrect(type)){
+                    tvAllData.setText("Некоректный тип!");
+                    break;
+                }
+                if(!isNumberInputCorrect(number)){
+                    tvAllData.setText("Количество не может быть пустым или равняться нулю!");
+                    break;
+                }
+                if(!isTextCorrect(provider)){
+                    tvAllData.setText("Некоректный поставщик!");
+                    break;
+                }
+                if(!isDateCorrect(date)){
+                    tvAllData.setText("Некорректная дата!\n Допустимые форматы:\n " +
+                            "XX-XX-XXXX\n " +
+                            "XX.XX.XXXX\n " +
+                            "XX/XX/XXXX");
+                    break;
+                }
+
                 if (checkUserExists(_id, name)) {
                    Toast toast = Toast.makeText(getBaseContext(), "Дублирование позиции!", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);

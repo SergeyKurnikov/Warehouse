@@ -27,7 +27,7 @@ public class QrActivity extends AppCompatActivity implements View.OnClickListene
     /**Экземпляры класса TextView для полей вывода расшифровки кода, формата кода,
      * текстовых данных из базы
      */
-    TextView tvScanContent, tvScanFormat, tvAllData2;
+    TextView tvScanContent, tvScanFormat, tvAllData;
 
     /**Экземпляры класса DBHelper для взаимодействия с базой данных*/
     DBHelper dbHelper;
@@ -39,7 +39,7 @@ public class QrActivity extends AppCompatActivity implements View.OnClickListene
 
         tvScanContent = findViewById(R.id.tvScanContent);
         tvScanFormat = findViewById(R.id.tvScanFormat);
-        tvAllData2 = findViewById(R.id.tvDataAll2);
+        tvAllData = findViewById(R.id.tvDataAll2);
 
         scanBtn = findViewById(R.id.btnScan);
         scanBtn.setOnClickListener(this);
@@ -112,7 +112,7 @@ public class QrActivity extends AppCompatActivity implements View.OnClickListene
                                 + cursor.getString(providerIndex) + " "
                                 + cursor.getString(dateIndex) + "\n";
                     } while (cursor.moveToNext());
-                    tvAllData2.setText(allLines);
+                    tvAllData.setText(allLines);
                 }
                 cursor.close();
                 dbHelper.hashCode();
