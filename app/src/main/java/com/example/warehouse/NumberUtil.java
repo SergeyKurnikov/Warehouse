@@ -1,7 +1,7 @@
 package com.example.warehouse;
 
 /**
- * Класс тестирования ввода в поля типа number
+ * Класс валидации ввода в числовые поля, содержит определение метода isNumberInputCorrect
  * @autor Сергей Курников
  * @version 1.0.0
  */

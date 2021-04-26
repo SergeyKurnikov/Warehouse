@@ -19,6 +19,13 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+/**
+ * Класс Activity "Сканирование QR-када". Третья активность приложения. Инициализация активности,
+ * создание объектов на базе классов библиотеки Zxing, реализация сканирования кода,
+ * создание экземпляра класса для обращения к БД, SQL-запрос на поиск по параметру, вывод результатов.
+ * @autor Сергей Курников
+ * @version 1.0.0
+ */
 public class QrActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**Экземпляры класса Button для кнопки сканирования*/

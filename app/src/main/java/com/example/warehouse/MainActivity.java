@@ -17,6 +17,13 @@ import android.widget.TextView;
 
 import static com.example.warehouse.TextUtil.isTextCorrect;
 
+/**
+ * Класс Activity "Учёт комплектующих". Первая активность приложения. Инициализация главной активности,
+ * создание экземпляра класса для обращения к БД, формирование SQL-запросов для поиска/фильтрации
+ * по параметрам, вызов методов валидации полей.
+ * @autor Сергей Курников
+ * @version 1.0.0
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     /**Экземпляры класса EditText для полей имени и емайла*/
     EditText edtId, edtName, edtType, edtProvider;

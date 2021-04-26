@@ -20,6 +20,13 @@ import static com.example.warehouse.NumberUtil.isNumberInputCorrect;
 import static com.example.warehouse.TextUtil.isTextCorrect;
 import static com.example.warehouse.DateUtil.isDateCorrect;
 
+/**
+ * Класс Activity "Администрирование". Вторая Активность приложения. Инициализация активности,
+ * создание экземпляра класса для обращения к БД, реализация CRUD-операций, вызов методов валидации
+ * полей, вывод результатов.
+ * @autor Сергей Курников
+ * @version 1.0.0
+ */
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
     /**Экземпляры класса EditText для полей имени и емайла*/
     EditText edtId, edtName, edtType, edtNumber, edtProvider, edtDate;
